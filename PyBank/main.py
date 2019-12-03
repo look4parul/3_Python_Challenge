@@ -56,12 +56,12 @@ with open(filepath_output, "w+") as out_file:
                 diffTotal =0
 
             prevPL = int(profit_loss)
-    
+
     # Calculating the output to display analysis output
     output1 = ("Financial Analysis" + "\n" + "----------------------------")
     output2 = "Total Months: " + str(count)
     output3 = "Total: $" + str(totalPL)
-    output4 = "Average  Change: $" + str(diffTotal/(count-1))
+    output4 = "Average  Change: $" + str("{0:.2f}".format(diffTotal/(count-1)))
     output5 = "Greatest Increase in Profits: " + maxIncMonth + " ($" +str(maxInc)+ ")" 
     output6 = "Greatest Decrease in Profits: " + maxDecMonth + " ($" + str(maxDec)+ ")"
     

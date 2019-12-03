@@ -13,9 +13,12 @@ filepath1 = os.path.join("employee_data.csv")
 # Setting the filepath for output file (output_employee_data.csv)
 filepath2 = os.path.join("output_employee_data.csv")
 
+# Opening the output file in write mode
 with open(filepath2, "w+") as out_file:
+    # Writing the header in output file
     header = ("Emp ID,First Name,Last Name,DOB,SSN,State\n")
     out_file.write(header)
+    # Opening the input file in read mode
     with open (filepath1, "r") as file:
         # Skipping the header and move to the fist row
         next(file)
@@ -51,10 +54,7 @@ with open(filepath2, "w+") as out_file:
             # New table with employee records in the required format
             new_table = [row[0], first_name, last_name, dob_formattedcolumn,trans_ssn, trans_state]      
             output_line = ",".join(new_table) + "\n"
-        
-            # Print(new_table)
-            print(output_line)
-            
+                  
             # Write into the output file
             out_file.write(output_line)
         

@@ -33,8 +33,12 @@ with open(filepath_output, "w+") as out_file:
         # Calculating average nmber of lines
         for k,v in word_count.items():
             total_words = total_words + v
-        output1 = "Approximate Word Count is: " + str(total_words)
+        output1 = ("Paragraph Analysis")
+        output2 = ("--------------------------------")
+        output3 = "Approximate Word Count: " + str(total_words)
         print(output1)
+        print(output2)
+        print(output3)
 
     # Count the number of sentences          
     with open (filepath_input, "r") as in_file:
@@ -45,8 +49,8 @@ with open(filepath_output, "w+") as out_file:
             else:
         # Assume that each sentence ends with . or ! or ? and count these characters to claculate the number of sentences
                 sentences += line.count('.') + line.count('!') + line.count('?')
-        output2 = "Approximate Sentence Count: " + str(sentences)
-    print (output2)    
+        output4 = "Approximate Sentence Count: " + str(sentences)
+    print(output4)    
 
     with open (filepath_input, "r") as in_file:
         for line in in_file:
@@ -58,10 +62,10 @@ with open(filepath_output, "w+") as out_file:
             #Average Sentence Length = Total number of lines / Sentence count
             avg_sentence_length = (total_words/sentences)
     #_____________ Printing the putput 
-    output3 = "Average Letter Count: " + str(avg_letter_count)
-    print(output3)
-    output4 = "Average Sentence length: " + str(avg_sentence_length)
-    print(output4)
+    output5 = "Average Letter Count: " + str("{0:.1f}".format(avg_letter_count))
+    print(output5)
+    output6 = "Average Sentence length: " + str(avg_sentence_length)
+    print(output6)
 
     
     # _______________________ Writing in the output file
@@ -70,4 +74,6 @@ with open(filepath_output, "w+") as out_file:
     out_file.write(output2 + "\n")
     out_file.write(output3 + "\n")
     out_file.write(output4 + "\n")
+    out_file.write(output5 + "\n")
+    out_file.write(output6 + "\n")
 

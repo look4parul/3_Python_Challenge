@@ -57,7 +57,7 @@ with open(filepath_output, "w+") as out_file:
 
     for key in dict:
         pct = round(dict[key]/total_votes*100,4)
-        output4 = key +' : '+str("{0:.2f}".format(pct))+'% ('+str(dict[key])+ ')'
+        output4 = key +' : '+str("{0:.3f}".format(pct))+'% ('+str(dict[key])+ ')'
         print (output4)
     output5 = 'Winner: '+winner
     print(output2)
@@ -72,7 +72,7 @@ with open(filepath_output, "w+") as out_file:
 
     for key in dict:
         pct = round(dict[key]/total_votes*100,4)
-        output4 = key +': '+str("{0:.2f}".format(pct))+'% ('+str(dict[key])+ ')'
+        output4 = key +': '+str("{0:.3f}".format(pct))+'% ('+str(dict[key])+ ')'
         out_file.write(output4 + "\n")
 
     out_file.write(output2 + "\n")
